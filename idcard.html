@@ -1,0 +1,50 @@
+const member = JSON.parse(localStorage.getItem("basaMember"));
+
+if (member) {
+    document.getElementById("cardName").textContent = member.fullname || "";
+    document.getElementById("cardPhone").textContent = member.phone || "";
+    document.getElementById("cardOccupation").textContent = member.occupation || "";
+    document.getElementById("cardLga").textContent = member.lga || "";
+    document.getElementById("cardWard").textContent = member.ward || "";
+    document.getElementById("cardId").textContent = member.memberId || "";
+
+    if (member.photo) {
+        document.getElementById("memberPhoto").src = member.photo;
+    }
+}
+
+document.getElementById("downloadBtn").addEventListener("click", function () {
+
+    const card = document.getElementById("basaCard");
+
+    html2canvas(card, {
+        scale: 1,
+        useCORS: true,
+        backgroundColor: null
+    }).then(function(canvas) {
+
+        const link = document.createElement("a");
+
+        if (member && member.fullname) {
+            link.download = member.fullname + "_BASA_ID_Card.png";
+        } else {
+            link.download = "BASA_ID_Card.png";
+        }
+
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+
+        setTimeout(function () {
+            document.getElementById("thankyouOverlay").style.display = "flex";
+        }, 1000);
+
+    }).catch(function(error) {
+        alert("Unable to generate ID Card. Please try again.");
+        console.log(error);
+    });
+
+});
+
+document.getElementById("homeBtn").addEventListener("click", function () {
+    window.location.href = "index.html";
+});
