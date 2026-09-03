@@ -1041,3 +1041,232 @@
             target="_blank"
             rel="noopener"
             href="https://wa.me/2348148035104?text=Hello%2C%20I%20am%20interested%20in%20OYO%20GOT%20SPIN%202026.%20I%20have%20comp
+            %20completed%20my%20registration%20and%20I%20am%20sending%20my%20audition%20video."
+      >
+        SEND YOUR AUDITION VIDEO ON WHATSAPP
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="rules">
+
+  <div class="container section-card">
+
+    <h3>Competition Rules</h3>
+
+    <ul class="rules">
+
+      <li>1. The competition is open to eligible DJs across Oyo State.</li>
+
+      <li>2. Contestants must provide accurate registration information.</li>
+
+      <li>3. A valid PVC Number is required.</li>
+
+      <li>4. Contestants must submit an original DJ performance video.</li>
+
+      <li>5. The audition video must NOT exceed 2 minutes.</li>
+
+      <li>6. Audition videos must be sent through WhatsApp.</li>
+
+      <li>7. Contestants must follow all official competition rules.</li>
+
+      <li>8. Organizers reserve the right to disqualify contestants who violate the rules.</li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+<section id="faq">
+
+  <div class="container section-card">
+
+    <h3>FAQ</h3>
+
+    <div class="faq">
+
+      <details>
+        <summary>Who can participate?</summary>
+        <p>Eligible DJs across all parts of Oyo State can participate.</p>
+      </details>
+
+      <details>
+        <summary>What is the cash prize?</summary>
+        <p>The winner will receive a ₦1,000,000 cash prize.</p>
+      </details>
+
+      <details>
+        <summary>How do I submit my audition video?</summary>
+        <p>Send your audition video through WhatsApp to 08148035104 after completing registration.</p>
+      </details>
+
+      <details>
+        <summary>How long should the audition video be?</summary>
+        <p>The audition video must NOT be more than 2 minutes long.</p>
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <strong>OYO GOT SPIN 2026</strong>
+
+    <div>BASA Entertainment Presents</div>
+
+    <div>© 2026 OYO GOT SPIN. All Rights Reserved.</div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+const GOOGLE_FORM_URL =
+"https://docs.google.com/forms/d/e/1FAIpQLSdUzUQF6LCtNCNk0sWkoo7phtSn3oAKEKKfglxs551byjBykg/formResponse";
+
+const form = document.getElementById("registrationForm");
+
+const submitBtn = document.getElementById("submitBtn");
+
+const successMessage =
+document.getElementById("registrationSuccess");
+
+const statusBox =
+document.getElementById("formStatus");
+
+
+form.addEventListener("submit", function(event){
+
+  event.preventDefault();
+
+  if(!form.checkValidity()){
+
+    form.reportValidity();
+
+    return;
+
+  }
+
+  submitBtn.disabled = true;
+
+  submitBtn.classList.add("loading");
+
+
+  const body = new URLSearchParams();
+
+
+  body.append(
+    "entry.1506902284",
+    document.getElementById("fullName").value
+  );
+
+  body.append(
+    "entry.1453211177",
+    document.getElementById("stageName").value
+  );
+
+  body.append(
+    "entry.578744723",
+    document.getElementById("phone").value
+  );
+
+  body.append(
+    "entry.297025692",
+    document.getElementById("whatsapp").value
+  );
+
+  body.append(
+    "entry.929586881",
+    document.getElementById("email").value
+  );
+
+  body.append(
+    "entry.423342017",
+    document.getElementById("pvc").value
+  );
+
+  body.append(
+    "entry.931047267",
+    document.getElementById("lga").value
+  );
+
+  body.append(
+    "entry.483673688",
+    document.getElementById("experience").value
+  );
+
+  body.append(
+    "entry.867856020",
+    document.getElementById("social").value
+  );
+
+
+  fetch(GOOGLE_FORM_URL, {
+
+    method:"POST",
+
+    mode:"no-cors",
+
+    headers:{
+      "Content-Type":
+      "application/x-www-form-urlencoded"
+    },
+
+    body:body.toString()
+
+  })
+
+  .then(function(){
+
+    form.reset();
+
+    submitBtn.disabled = false;
+
+    submitBtn.classList.remove("loading");
+
+    statusBox.style.display = "none";
+
+    successMessage.classList.add("show");
+
+    successMessage.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+  })
+
+  .catch(function(){
+
+    submitBtn.disabled = false;
+
+    submitBtn.classList.remove("loading");
+
+    statusBox.className =
+    "status show error";
+
+    statusBox.textContent =
+    "Registration could not be submitted. Please check your internet connection and try again.";
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
