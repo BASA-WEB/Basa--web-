@@ -1134,109 +1134,88 @@
 </footer>
 
 
-<script>
+
+  <script>
 
 const GOOGLE_FORM_URL =
 "https://docs.google.com/forms/d/e/1FAIpQLSdUzUQF6LCtNCNk0sWkoo7phtSn3oAKEKKfglxs551byjBykg/formResponse";
 
 const form = document.getElementById("registrationForm");
-
 const submitBtn = document.getElementById("submitBtn");
-
-const successMessage =
-document.getElementById("registrationSuccess");
-
-const statusBox =
-document.getElementById("formStatus");
-
+const successMessage = document.getElementById("registrationSuccess");
+const statusBox = document.getElementById("formStatus");
 
 form.addEventListener("submit", function(event){
 
   event.preventDefault();
 
   if(!form.checkValidity()){
-
     form.reportValidity();
-
     return;
-
   }
 
   submitBtn.disabled = true;
-
   submitBtn.classList.add("loading");
 
+  const iframe = document.createElement("iframe");
+  iframe.name = "googleFormFrame";
+  iframe.style.display = "none";
 
-  const body = new URLSearchParams();
+  const googleForm = document.createElement("form");
 
+  googleForm.method = "POST";
+  googleForm.action = GOOGLE_FORM_URL;
+  googleForm.target = "googleFormFrame";
+  googleForm.style.display = "none";
 
-  body.append(
-    "entry.1506902284",
-    document.getElementById("fullName").value
-  );
+  document.body.appendChild(iframe);
+  document.body.appendChild(googleForm);
 
-  body.append(
-    "entry.1453211177",
-    document.getElementById("stageName").value
-  );
+  function addField(name, value){
 
-  body.append(
-    "entry.578744723",
-    document.getElementById("phone").value
-  );
+    const input = document.createElement("input");
 
-  body.append(
-    "entry.297025692",
-    document.getElementById("whatsapp").value
-  );
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
 
-  body.append(
-    "entry.929586881",
-    document.getElementById("email").value
-  );
+    googleForm.appendChild(input);
+  }
 
-  body.append(
-    "entry.423342017",
-    document.getElementById("pvc").value
-  );
+  addField("entry.1506902284",
+    document.getElementById("fullName").value);
 
-  body.append(
-    "entry.931047267",
-    document.getElementById("lga").value
-  );
+  addField("entry.1453211177",
+    document.getElementById("stageName").value);
 
-  body.append(
-    "entry.483673688",
-    document.getElementById("experience").value
-  );
+  addField("entry.578744723",
+    document.getElementById("phone").value);
 
-  body.append(
-    "entry.867856020",
-    document.getElementById("social").value
-  );
+  addField("entry.297025692",
+    document.getElementById("whatsapp").value);
 
+  addField("entry.929586881",
+    document.getElementById("email").value);
 
-  fetch(GOOGLE_FORM_URL, {
+  addField("entry.423342017",
+    document.getElementById("pvc").value);
 
-    method:"POST",
+  addField("entry.931047267",
+    document.getElementById("lga").value);
 
-    mode:"no-cors",
+  addField("entry.483673688",
+    document.getElementById("experience").value);
 
-    headers:{
-      "Content-Type":
-      "application/x-www-form-urlencoded"
-    },
+  addField("entry.867856020",
+    document.getElementById("social").value);
 
-    body:body.toString()
+  googleForm.submit();
 
-  })
-
-  .then(function(){
+  setTimeout(function(){
 
     form.reset();
 
     submitBtn.disabled = false;
-
     submitBtn.classList.remove("loading");
 
     statusBox.style.display = "none";
@@ -1244,25 +1223,14 @@ form.addEventListener("submit", function(event){
     successMessage.classList.add("show");
 
     successMessage.scrollIntoView({
-      behavior:"smooth",
-      block:"center"
+      behavior: "smooth",
+      block: "center"
     });
 
-  })
+    googleForm.remove();
+    iframe.remove();
 
-  .catch(function(){
-
-    submitBtn.disabled = false;
-
-    submitBtn.classList.remove("loading");
-
-    statusBox.className =
-    "status show error";
-
-    statusBox.textContent =
-    "Registration could not be submitted. Please check your internet connection and try again.";
-
-  });
+  }, 1500);
 
 });
 
