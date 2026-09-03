@@ -1,10 +1,15 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>OYO GOT SPIN 2026</title><meta
-name="description"
-content="BASA Entertainment Presents OYO GOT SPIN 2026 — Oyo's Next DJ Sensation."
-/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>OYO GOT SPIN 2026</title>
+
+  <meta
+    name="description"
+    content="BASA Entertainment Presents OYO GOT SPIN 2026 — Oyo's Next DJ Sensation."
+  />
 
   <style>
     :root{
@@ -400,6 +405,7 @@ content="BASA Entertainment Presents OYO GOT SPIN 2026 — Oyo's Next DJ Sensati
       padding:12px 14px;
       border-radius:14px;
       font-weight:700;
+      margin-bottom:14px;
     }
 
     .status.show{
@@ -418,7 +424,6 @@ content="BASA Entertainment Presents OYO GOT SPIN 2026 — Oyo's Next DJ Sensati
       color:#1c6c36;
     }
 
-    /* SUCCESS MESSAGE */
     .registration-success{
       display:none;
       margin-top:18px;
@@ -520,6 +525,14 @@ content="BASA Entertainment Presents OYO GOT SPIN 2026 — Oyo's Next DJ Sensati
       animation:spin 1s linear infinite;
     }
 
+    .btn.loading .spinner{
+      display:inline-block;
+    }
+
+    .btn.loading .btnText{
+      display:none;
+    }
+
     @keyframes spin{
       to{
         transform:rotate(360deg);
@@ -551,553 +564,480 @@ content="BASA Entertainment Presents OYO GOT SPIN 2026 — Oyo's Next DJ Sensati
         height:210px;
       }
     }
-  </style></head><body>  <div class="topbar">
-    <div class="container">  <div>
-    BASA Entertainment Presents
-  </div>
+  </style>
+</head>
 
-  <a
-    class="backlink"
-    href="index.html"
-    aria-label="Back to BASA homepage"
-  >
-    ← Back to Home
-  </a>
+<body>
 
-</div>
+  <div class="topbar">
+    <div class="container">
 
-  </div>  <header><div class="container header-inner">
-
-  <div class="brand">
-
-    <small>
-      BASA Entertainment Presents
-    </small>
-
-    <h1>
-      OYO GOT SPIN 2026
-    </h1>
-
-  </div>
-
-  <nav class="nav" aria-label="Primary">
-
-    <a href="#about">About</a>
-
-    <a href="#register">Register</a>
-
-    <a href="#rules">Rules</a>
-
-    <a href="#faq">FAQ</a>
-
-  </nav>
-
-</div>
-
-  </header>  <main><!-- HERO -->
-
-<section class="hero">
-
-  <div class="container hero-grid">
-
-    <div>
-
-      <div class="badge">
-        Proudly Sponsored by BASA FOUNDATION
+      <div>
+        BASA Entertainment Presents
       </div>
-
-      <h2>
-        OYO GOT SPIN 2026
-      </h2>
-
-      <p class="sub">
-        Oyo's Next DJ Sensation
-      </p>
-
-      <div class="prize">
-        ₦1,000,000 CASH PRIZE
-      </div>
-
-      <p>
-        Discover, showcase, and promote talented DJs across all parts of Oyo State.
-      </p>
-
-      <div class="cta-row">
-
-        <a
-          class="btn btn-primary"
-          href="#register"
-        >
-          REGISTER NOW
-        </a>
-
-        <a
-          class="btn btn-secondary"
-          href="#about"
-        >
-          Learn More
-        </a>
-
-      </div>
-
-    </div>
-
-    <div class="hero-card">
-
-      <div
-        class="illustration"
-        aria-hidden="true"
-      >
-
-        <div class="disc"></div>
-
-        <div class="needle"></div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-  <div class="container section-card">
-
-    <h3>
-      About the Competition
-    </h3>
-
-    <p>
-      OYO GOT SPIN 2026 is a statewide DJ talent competition designed to discover, showcase and promote talented DJs across all parts of Oyo State.
-    </p>
-
-    <p>
-      The competition is open to all eligible contestants in Oyo State, and it is built to spotlight skill, creativity, performance, and originality.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- REGISTRATION -->
-
-<section id="register">
-
-  <div class="container grid-2">
-
-    <div class="section-card">
-
-      <h3>
-        Registration Form
-      </h3>
-
-      <p>
-        Complete the form below to register. Make sure every detail is accurate before submitting.
-      </p>
-
-      <div
-        id="formStatus"
-        class="status"
-        role="alert"
-        aria-live="polite"
-      ></div>
-
-
-      <form
-        id="registrationForm"
-        novalidate
-      >
-
-        <div class="form-grid">
-
-
-          <div class="field">
-
-            <label for="fullName">
-              Full Name *
-            </label>
-
-            <input
-              id="fullName"
-              name="fullName"
-              type="text"
-              required
-            />
-
-          </div>
-
-
-          <div class="field">
-
-            <label for="stageName">
-              DJ / Stage Name *
-            </label>
-
-            <input
-              id="stageName"
-              name="stageName"
-              type="text"
-              required
-            />
-
-          </div>
-
-
-          <div class="field">
-
-            <label for="phone">
-              Phone Number *
-            </label>
-
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              inputmode="tel"
-              placeholder="08012345678"
-              required
-            />
-
-          </div>
-
-
-          <div class="field">
-
-            <label for="whatsapp">
-              WhatsApp Number *
-            </label>
-
-            <input
-              id="whatsapp"
-              name="whatsapp"
-              type="tel"
-              inputmode="tel"
-              placeholder="08012345678"
-              required
-            />
-
-          </div>
-
-
-          <div class="field">
-
-            <label for="email">
-              Email Address *
-            </label>
-
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-            />
-
-          </div>
-
-
-          <div class="field">
-
-            <label for="pvc">
-              PVC Number *
-            </label>
-
-            <input
-              id="pvc"
-              name="pvc"
-              type="text"
-              required
-            />
-
-          </div>
-
-
-          <div class="field">
-
-            <label for="lga">
-              LGA *
-            </label>
-
-            <select
-              id="lga"
-              name="lga"
-              required
-            >
-
-              <option value="">
-                Select your LGA
-              </option>
-
-              <option>Afijio</option>
-              <option>Akinyele</option>
-              <option>Atiba</option>
-              <option>Atisbo</option>
-              <option>Egbeda</option>
-              <option>Ibadan North</option>
-              <option>Ibadan North East</option>
-              <option>Ibadan North West</option>
-              <option>Ibadan South East</option>
-              <option>Ibadan South West</option>
-              <option>Ibarapa Central</option>
-              <option>Ibarapa East</option>
-              <option>Ibarapa North</option>
-              <option>Ido</option>
-              <option>Irepo</option>
-              <option>Iseyin</option>
-              <option>Itesiwaju</option>
-              <option>Iwajowa</option>
-              <option>Kajola</option>
-              <option>Lagelu</option>
-              <option>Ogbomosho North</option>
-              <option>Ogbomosho South</option>
-              <option>Ogo Oluwa</option>
-              <option>Olorunsogo</option>
-              <option>Oluyole</option>
-              <option>Ona Ara</option>
-              <option>Orelope</option>
-              <option>Oriire</option>
-              <option>Oyo East</option>
-              <option>Oyo West</option>
-              <option>Saki East</option>
-              <option>Saki West</option>
-              <option>Surulere</option>
-
-            </select>
-
-          </div>
-
-
-          <div class="field">
-
-            <label for="experience">
-              Years of DJ Experience *
-            </label>
-
-            <select
-              id="experience"
-              name="experience"
-              required
-            >
-
-              <option value="">
-                Select years
-              </option>
-
-              <option>
-                Less than 1 year
-              </option>
-
-              <option>
-                1-2 years
-              </option>
-
-              <option>
-                3-5 years
-              </option>
-
-              <option>
-                6-10 years
-              </option>
-
-              <option>
-                10+ years
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <div class="field full">
-
-            <label for="social">
-              Social Media Handle *
-            </label>
-
-            <input
-              id="social"
-              name="social"
-              type="text"
-              placeholder="@yourhandle"
-              required
-            />
-
-          </div>
-
-        </div>
-
-
-        <button
-          id="submitBtn"
-          class="btn btn-primary full"
-          type="submit"
-        >
-
-          <span class="btnText">
-            Submit Registration
-          </span>
-
-          <span
-            class="spinner"
-            aria-hidden="true"
-          ></span>
-
-        </button>
-
-
-        <!-- SUCCESS MESSAGE -->
-
-        <div
-          id="registrationSuccess"
-          class="registration-success"
-          role="status"
-          aria-live="polite"
-        >
-
-          <div class="success-icon">
-            ✓
-          </div>
-
-          <h4>
-            Thank You!
-          </h4>
-
-          <p>
-            You have successfully completed your registration for
-            <strong>OYO GOT SPIN 2026</strong>.
-            Your information has been received successfully.
-          </p>
-
-        </div>
-
-      </form>
-
-    </div>
-
-
-    <!-- WHATSAPP -->
-
-    <div class="section-card">
-
-      <h3>
-        Audition Video Instructions
-      </h3>
-
-      <p>
-        <strong>
-          Record a DJ performance video of NOT MORE THAN 2 MINUTES.
-        </strong>
-      </p>
-
-      <p>
-        After completing your registration, send your audition video through WhatsApp.
-      </p>
-
-      <p>
-        <strong>
-          WhatsApp number:
-        </strong>
-        08148035104
-      </p>
 
       <a
-        class="btn btn-whatsapp"
-        target="_blank"
-        rel="noopener"
-        href="https://wa.me/2348148035104?text=Hello%2C%20I%20am%20interested%20in%20OYO%20GOT%20SPIN%202026.%20I%20have%20completed%20my%20registration%20and%20I%20am%20sending%20my%20audition%20video."
+        class="backlink"
+        href="index.html"
+        aria-label="Back to BASA homepage"
       >
-        SEND YOUR AUDITION VIDEO ON WHATSAPP
+        ← Back to Home
       </a>
 
     </div>
-
   </div>
 
-</section>
+
+  <header>
+
+    <div class="container header-inner">
+
+      <div class="brand">
+
+        <small>
+          BASA Entertainment Presents
+        </small>
+
+        <h1>
+          OYO GOT SPIN 2026
+        </h1>
+
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+
+        <a href="#about">About</a>
+
+        <a href="#register">Register</a>
+
+        <a href="#rules">Rules</a>
+
+        <a href="#faq">FAQ</a>
+
+      </nav>
+
+    </div>
+
+  </header>
 
 
-<!-- RULES -->
+  <main>
 
-<section id="rules">
+    <!-- HERO -->
 
-  <div class="container section-card">
+    <section class="hero">
 
-    <h3>
-      Competition Rules
-    </h3>
+      <div class="container hero-grid">
 
-    <ul class="rules">
+        <div>
 
-      <li>
-        1. The competition is open to eligible DJs across Oyo State.
-      </li>
+          <div class="badge">
+            Proudly Sponsored by BASA FOUNDATION
+          </div>
 
-      <li>
-        2. Contestants must provide accurate registration information.
-      </li>
+          <h2>
+            OYO GOT SPIN 2026
+          </h2>
 
-      <li>
-        3. A valid PVC Number is required.
-      </li>
+          <p class="sub">
+            Oyo's Next DJ Sensation
+          </p>
 
-      <li>
-        4. Contestants must submit an original DJ performance video.
-      </li>
+          <div class="prize">
+            ₦1,000,000 CASH PRIZE
+          </div>
 
-      <li>
-        5. The audition video must NOT exceed 2 minutes.
-      </li>
+          <p>
+            Discover, showcase, and promote talented DJs across all parts of Oyo State.
+          </p>
 
-      <li>
-        6. Audition videos must be sent through WhatsApp.
-      </li>
+          <div class="cta-row">
 
-      <li>
-        7. Contestants must follow all official competition rules.
-      </li>
+            <a
+              class="btn btn-primary"
+              href="#register"
+            >
+              REGISTER NOW
+            </a>
 
-      <li>
-        8. Organizers reserve the right to disqualify contestants who violate the rules.
-      </li>
+            <a
+              class="btn btn-secondary"
+              href="#about"
+            >
+              Learn More
+            </a>
 
-    </ul>
+          </div>
 
-  </div>
-
-</section>
+        </div>
 
 
-<!-- FAQ -->
+        <div class="hero-card">
 
-<section id="faq">
+          <div
+            class="illustration"
+            aria-hidden="true"
+          >
 
-  <div class="container section-card">
+            <div class="disc"></div>
 
-    <h3>
-      FAQ
-    </h3>
+            <div class="needle"></div>
 
-    <div class="faq">
+          </div>
 
-      <details>
+        </div>
 
-        <summary>
-          Who can participate?
-        </summary>
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+      <div class="container section-card">
+
+        <h3>
+          About the Competition
+        </h3>
 
         <p>
-          Eligible DJs across all parts of Oyo State can participate.
+          OYO GOT SPIN 2026 is a statewide DJ talent competition designed to discover, showcase and promote talented DJs across all parts of Oyo State.
         </p>
 
-      </details>
+        <p>
+          The competition is open to all eligible contestants in Oyo State, and it is built to spotlight skill, creativity, performance, and originality.
+        </p>
+
+      </div>
+
+    </section>
 
 
-      <details>
+    <!-- REGISTRATION -->
 
-        <summary>
-          Wh
+    <section id="register">
+
+      <div class="container grid-2">
+
+        <div class="section-card">
+
+          <h3>
+            Registration Form
+          </h3>
+
+          <p>
+            Complete the form below to register. Make sure every detail is accurate before submitting.
+          </p>
+
+
+          <div
+            id="formStatus"
+            class="status"
+            role="alert"
+            aria-live="polite"
+          ></div>
+
+
+          <form
+            id="registrationForm"
+            novalidate
+          >
+
+            <div class="form-grid">
+
+
+              <div class="field">
+
+                <label for="fullName">
+                  Full Name *
+                </label>
+
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  required
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="stageName">
+                  DJ / Stage Name *
+                </label>
+
+                <input
+                  id="stageName"
+                  name="stageName"
+                  type="text"
+                  required
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="phone">
+                  Phone Number *
+                </label>
+
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  inputmode="tel"
+                  placeholder="08012345678"
+                  required
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="whatsapp">
+                  WhatsApp Number *
+                </label>
+
+                <input
+                  id="whatsapp"
+                  name="whatsapp"
+                  type="tel"
+                  inputmode="tel"
+                  placeholder="08012345678"
+                  required
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="email">
+                  Email Address *
+                </label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="pvc">
+                  PVC Number *
+                </label>
+
+                <input
+                  id="pvc"
+                  name="pvc"
+                  type="text"
+                  required
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="lga">
+                  LGA *
+                </label>
+
+                <select
+                  id="lga"
+                  name="lga"
+                  required
+                >
+
+                  <option value="">
+                    Select your LGA
+                  </option>
+
+                  <option>Afijio</option>
+                  <option>Akinyele</option>
+                  <option>Atiba</option>
+                  <option>Atisbo</option>
+                  <option>Egbeda</option>
+                  <option>Ibadan North</option>
+                  <option>Ibadan North East</option>
+                  <option>Ibadan North West</option>
+                  <option>Ibadan South East</option>
+                  <option>Ibadan South West</option>
+                  <option>Ibarapa Central</option>
+                  <option>Ibarapa East</option>
+                  <option>Ibarapa North</option>
+                  <option>Ido</option>
+                  <option>Irepo</option>
+                  <option>Iseyin</option>
+                  <option>Itesiwaju</option>
+                  <option>Iwajowa</option>
+                  <option>Kajola</option>
+                  <option>Lagelu</option>
+                  <option>Ogbomosho North</option>
+                  <option>Ogbomosho South</option>
+                  <option>Ogo Oluwa</option>
+                  <option>Olorunsogo</option>
+                  <option>Oluyole</option>
+                  <option>Ona Ara</option>
+                  <option>Orelope</option>
+                  <option>Oriire</option>
+                  <option>Oyo East</option>
+                  <option>Oyo West</option>
+                  <option>Saki East</option>
+                  <option>Saki West</option>
+                  <option>Surulere</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="experience">
+                  Years of DJ Experience *
+                </label>
+
+                <select
+                  id="experience"
+                  name="experience"
+                  required
+                >
+
+                  <option value="">
+                    Select years
+                  </option>
+
+                  <option>
+                    Less than 1 year
+                  </option>
+
+                  <option>
+                    1-2 years
+                  </option>
+
+                  <option>
+                    3-5 years
+                  </option>
+
+                  <option>
+                    6-10 years
+                  </option>
+
+                  <option>
+                    10+ years
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label for="social">
+                  Social Media Handle *
+                </label>
+
+                <input
+                  id="social"
+                  name="social"
+                  type="text"
+                  placeholder="@yourhandle"
+                  required
+                />
+
+              </div>
+
+            </div>
+
+
+            <button
+              id="submitBtn"
+              class="btn btn-primary full"
+              type="submit"
+            >
+
+              <span class="btnText">
+                Submit Registration
+              </span>
+
+              <span
+                class="spinner"
+                aria-hidden="true"
+              ></span>
+
+            </button>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+              id="registrationSuccess"
+              class="registration-success"
+              role="status"
+              aria-live="polite"
+            >
+
+              <div class="success-icon">
+                ✓
+              </div>
+
+              <h4>
+                Thank You!
+              </h4>
+
+              <p>
+                You have successfully completed your registration for
+                <strong>OYO GOT SPIN 2026</strong>.
+                Your information has been received successfully.
+              </p>
+
+            </div>
+
+          </form>
+
+        </div>
+
+
+        <!-- WHATSAPP -->
+
+        <div class="section-card">
+
+          <h3>
+            Audition Video Instructions
+          </h3>
+
+          <p>
+            <strong>
+              Record a DJ performance video of NOT MORE THAN 2 MINUTES.
+            </strong>
+          </p>
+
+          <p>
+            After completing your registration, send your audition video through WhatsApp.
+          </p>
+
+          <p>
+            <strong>
+              WhatsApp number:
+            </strong>
+            08148035104
+          </p>
+
+          <a
+            class="btn btn-whatsapp"
+            target="_blank"
+            rel="noopener"
+            href="https://wa.me/2348148035104?text=Hello%2C%20I%20am%20interested%20in%20OYO%20GOT%20SPIN%202026.%20I%20have%20comp
