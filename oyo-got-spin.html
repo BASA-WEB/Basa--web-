@@ -112,7 +112,6 @@
             </div>
             <button id="submitBtn" class="btn btn-primary full" type="submit"><span class="btnText">Submit Registration</span><span class="spinner" aria-hidden="true"></span></button>
           </form>
-          <p class="note error" style="margin-top:14px">Google Sheets is not connected yet. Please connect the Google Apps Script URL before accepting registrations.</p>
         </div>
 
         <div class="section-card">
@@ -163,7 +162,42 @@
   </footer>
 
   <script>
-    const GOOGLE_SCRIPT_URL = "";
+    /* ============================================================================
+       HOW REGISTRATIONS REACH YOUR GOOGLE SHEET
+       ============================================================================
+       This page submits data directly to the OYO GOT SPIN 2026 Google Form
+       (via GOOGLE_FORM_ID and GOOGLE_FORM_ENTRY_IDS below). That Form is
+       already linked to the OYO GOT SPIN Google Sheet, so every submission
+       automatically appears as a new row in its "Form Responses 1" tab.
+       No Apps Script or deployment is needed.
+
+       HOW TO UPDATE THESE VALUES (only if you ever recreate the Google Form):
+       1. Open the Google Form → three dots (⋮) → "Get pre-filled link".
+       2. Type a test answer into every question, then tap "Get link" and
+          copy it.
+       3. The link looks like:
+          https://docs.google.com/forms/d/e/FORM_ID/viewform?usp=pp_url
+            &entry.111111111=TEST&entry.222222222=TEST&...
+       4. FORM_ID is the code between /d/e/ and /viewform — update
+          GOOGLE_FORM_ID below.
+       5. Match each entry.XXXXXXXXX= number to the correct field in
+          GOOGLE_FORM_ENTRY_IDS below, in the order the questions appear on
+          the form.
+       ============================================================================ */
+    var GOOGLE_FORM_ID = "1FAIpQLSdUzUQF6LCtNCNk0sWkoo7phtSn3oAKEKKfglxs551byjBykg";
+
+    var GOOGLE_FORM_ENTRY_IDS = {
+      fullName:   "entry.1506902284",
+      stageName:  "entry.1453211177",
+      phone:      "entry.578744723",
+      whatsapp:   "entry.297025692",
+      email:      "entry.929586881",
+      pvc:        "entry.423342017",
+      lga:        "entry.931047267",
+      experience: "entry.483673688",
+      social:     "entry.867856020"
+    };
+
     const form = document.getElementById('registrationForm');
     const statusBox = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
@@ -176,8 +210,12 @@
       statusBox.className = `status show ${type}`;
     };
 
-    const validPhone = v => /^+?d{10,15}$/.test(v.replace(/s+/g,''));
-    const validPVC = v => /^[A-Za-z0-9-/]{5,}$/.test(v.trim());
+    // Fixed: original patterns were missing backslashes and were invalid
+    // JavaScript regex syntax, which would have broken form submission
+    // entirely (an uncaught SyntaxError) the moment someone tried to submit.
+    const validPhone = v => /^\+?\d{10,15}$/.test(v.replace(/\s+/g,''));
+    const validEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+    const validPVC = v => /^[A-Za-z0-9\-/]{5,}$/.test(v.trim());
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -185,12 +223,11 @@
       const data = Object.fromEntries(new FormData(form).entries());
       const required = ['fullName','stageName','phone','whatsapp','email','pvc','lga','experience','social'];
       for (const key of required) if (!data[key] || !String(data[key]).trim()) return showStatus('Please fill in all required fields.', 'error');
-      if (!/^[^s@]+@[^s@]+.[^s@]+$/.test(data.email)) return showStatus('Please enter a valid email address.', 'error');
+      if (!validEmail(data.email)) return showStatus('Please enter a valid email address.', 'error');
       if (!validPhone(data.phone)) return showStatus('Please enter a valid phone number.', 'error');
       if (!validPhone(data.whatsapp)) return showStatus('Please enter a valid WhatsApp number.', 'error');
       if (!validPVC(data.pvc)) return showStatus('Please enter a valid PVC Number.', 'error');
       if (!data.lga) return showStatus('Please select your LGA.', 'error');
-      if (!GOOGLE_SCRIPT_URL) return showStatus('Google Sheets is not connected yet. Please connect the Google Apps Script URL before accepting registrations.', 'error');
 
       isSubmitting = true;
       submitBtn.disabled = true;
@@ -199,21 +236,12 @@
       showStatus('Submitting your registration...', 'success');
 
       try {
-        const res = await fetch(GOOGLE_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'cors',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(data)
-        });
-        const result = await res.json().catch(() => ({}));
-        if (res.ok && (result.success || result.status === 'success' || Object.keys(result).length === 0)) {
-          form.reset();
-          showStatus('Registration Successful! Please send your audition video through WhatsApp using the button below.', 'success');
-        } else {
-          showStatus(result.message || 'Submission failed. Please try again.', 'error');
-        }
+        await submitToGoogleForm(data);
+        form.reset();
+        showStatus('Registration Successful! Please send your audition video through WhatsApp using the button below.', 'success');
       } catch (err) {
-        showStatus('Submission failed. Please try again.', 'error');
+        console.error('OYO GOT SPIN 2026 — registration failed:', err);
+        showStatus('We could not save your registration. Please check your internet connection and try again.', 'error');
       } finally {
         isSubmitting = false;
         submitBtn.disabled = false;
@@ -221,6 +249,39 @@
         btnText.textContent = 'Submit Registration';
       }
     });
+
+    /**
+     * submitToGoogleForm(data)
+     * ----------------------------------------------------------------------
+     * Sends the registration data to the linked Google Form, which Google
+     * automatically records as a new row in the connected Google Sheet.
+     *
+     * Google Forms' submission endpoint does not allow this page to read
+     * back a real success/failure response (a normal browser security
+     * restriction called CORS, not a bug in this code). So this function
+     * sends the data in "no-cors" mode and resolves as successful once the
+     * request completes without a network error.
+     */
+    function submitToGoogleForm(data) {
+      const formActionUrl =
+        'https://docs.google.com/forms/d/e/' + GOOGLE_FORM_ID + '/formResponse';
+
+      const body = new URLSearchParams();
+      Object.keys(GOOGLE_FORM_ENTRY_IDS).forEach((fieldName) => {
+        const entryId = GOOGLE_FORM_ENTRY_IDS[fieldName];
+        const value = data[fieldName] !== undefined && data[fieldName] !== null
+          ? String(data[fieldName])
+          : '';
+        body.append(entryId, value);
+      });
+
+      return fetch(formActionUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString()
+      });
+    }
   </script>
 </body>
   </html>
