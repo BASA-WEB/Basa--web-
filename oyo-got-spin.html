@@ -1,287 +1,771 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OYO GOT SPIN 2026</title>
-  <meta name="description" content="BASA Entertainment Presents OYO GOT SPIN 2026 — Oyo's Next DJ Sensation." />
-  <style>
-    :root{--green:#0f7a3a;--green2:#135f31;--white:#fff;--red:#b31b1b;--gold:#d4af37;--bg:#f6f8f7;--text:#14311f;--muted:#5e6c63;--card:#ffffff;--border:#dbe4dd;--shadow:0 10px 30px rgba(15,122,58,.08)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
-    a{color:inherit;text-decoration:none}button,input,select{font:inherit}
-    .container{width:min(1100px,92vw);margin:0 auto}
-    .topbar{background:linear-gradient(90deg,var(--green2),var(--green));color:#fff}
-    .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;font-size:.92rem}
-    .backlink{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.08)}
-    header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20;backdrop-filter:saturate(180%) blur(10px)}
-    .header-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0}
-    .brand{display:flex;flex-direction:column;gap:3px}.brand small{color:var(--green);font-weight:700;letter-spacing:.04em;text-transform:uppercase}.brand h1{margin:0;font-size:1.1rem;line-height:1.1}.nav{display:flex;flex-wrap:wrap;gap:10px}.nav a{padding:10px 12px;border-radius:10px;color:var(--muted)}.nav a:hover{background:#f1f5f2;color:var(--text)}
-    .hero{padding:34px 0 22px;background:radial-gradient(circle at top right, rgba(212,175,55,.12), transparent 28%),linear-gradient(180deg,#fff, #f7fbf8)}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
-    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(15,122,58,.08);color:var(--green);padding:8px 12px;border-radius:999px;font-weight:700;font-size:.9rem;margin-bottom:14px}
-    .hero h2{margin:0 0 10px;font-size:clamp(2rem,6vw,3.9rem);line-height:1.03}.hero .sub{margin:0 0 16px;color:var(--muted);font-size:1.08rem}
-    .prize{display:inline-block;background:linear-gradient(135deg,var(--gold),#f6dc7a);color:#1f1a07;font-weight:900;padding:12px 16px;border-radius:14px;box-shadow:var(--shadow);margin:6px 0 18px}.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:14px;padding:14px 18px;font-weight:800;cursor:pointer;transition:.2s transform,.2s opacity,.2s background}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--red);color:#fff}.btn-secondary{background:#fff;color:var(--green);border:1px solid var(--border)}.btn-whatsapp{background:#1fb45b;color:#fff;width:100%}
-    .hero-card{background:linear-gradient(180deg,#ffffff, #f5fbf7);border:1px solid var(--border);border-radius:24px;padding:20px;box-shadow:var(--shadow)}
-    .illustration{height:260px;border-radius:20px;background:linear-gradient(135deg,rgba(15,122,58,.14),rgba(179,27,27,.11));position:relative;overflow:hidden;display:grid;place-items:center}
-    .disc{width:160px;height:160px;border-radius:50%;background:radial-gradient(circle at 35% 35%, #fff 0 8%, #222 9% 14%, #444 15% 22%, #111 23% 100%);box-shadow:0 0 0 16px rgba(255,255,255,.25),0 0 0 34px rgba(15,122,58,.12)}
-    .needle{position:absolute;width:150px;height:12px;background:linear-gradient(90deg,var(--gold),#8a6c17);border-radius:999px;transform:rotate(-22deg);top:76px;right:34px;transform-origin:right center}.needle:after{content:"";position:absolute;right:-10px;top:-4px;width:20px;height:20px;border-radius:50%;background:var(--red)}
-    section{padding:24px 0}.section-card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:20px;box-shadow:var(--shadow)}
-    h3{margin:0 0 12px;font-size:1.35rem}p{margin:0 0 12px;color:#2d3d35}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.rules li,.faq details{background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px 16px;box-shadow:0 4px 16px rgba(0,0,0,.03)}.rules{display:grid;gap:10px;padding:0;margin:0;list-style:none}
-    form{display:grid;gap:14px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}label{font-weight:700;font-size:.95rem}input,select{width:100%;padding:13px 14px;border:1px solid #cfd9d1;border-radius:14px;background:#fff;color:var(--text);outline:none}input:focus,select:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(15,122,58,.1)}.full{grid-column:1/-1}
-    .note{padding:12px 14px;border-radius:14px;background:#f0f8f3;border:1px solid #d9eadf;color:#245438}.error{background:#fff3f3;border-color:#f1c6c6;color:#8c1f1f}.success{background:#eefaf2;border-color:#cfe9d5;color:#1c6c36}
-    .status{display:none;padding:12px 14px;border-radius:14px;font-weight:700}.status.show{display:block}
-    .faq{display:grid;gap:12px}.faq summary{cursor:pointer;font-weight:800;color:#183c26}.faq p{margin-top:10px;color:var(--muted)}
-    footer{margin-top:30px;background:#0f2417;color:#e7f1ea}.footer-inner{padding:22px 0;text-align:center}.footer-inner strong{display:block;color:#fff;margin-bottom:4px}
-    .spinner{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-    @media (max-width:840px){.hero-grid,.grid-2,.form-grid,.header-inner{grid-template-columns:1fr;display:grid}.nav{justify-content:flex-start}.hero{padding-top:24px}.illustration{height:210px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OYO GOT SPIN 2026</title>
+<meta name="description" content="OYO GOT SPIN 2026 — Oyo's Next DJ Sensation. Presented by BASA Entertainment. Register now for a chance to win ₦1,000,000 cash prize.">
+<style>
+/* ==========================================================================
+   OYO GOT SPIN 2026 — stylesheet
+   Palette: dark green, green, gold, red, white (BASA campaign identity)
+   ========================================================================== */
+
+:root {
+  --green-dark: #0B3D24;
+  --green-deeper: #082B19;
+  --green: #1F7A3D;
+  --green-bright: #2E9E52;
+  --gold: #D4AF37;
+  --gold-soft: #E9CF7A;
+  --red: #C81E2D;
+  --white: #FFFFFF;
+  --off-white: #F7F5EF;
+  --ink: #12251A;
+  --ink-soft: #3C4B41;
+  --border-soft: #DDE3DA;
+
+  --font-display: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --radius: 10px;
+  --max-width: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--off-white);
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  line-height: 1.2;
+}
+
+.btn:active { transform: scale(0.98); }
+
+.btn-large {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 1.05rem;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--green-deeper);
+  box-shadow: 0 4px 0 #a9871f;
+}
+
+.btn-primary:hover { box-shadow: 0 3px 0 #a9871f; }
+
+.btn-whatsapp {
+  background: var(--green);
+  color: var(--white);
+  box-shadow: 0 4px 0 #124d26;
+  margin-top: 16px;
+}
+
+.btn-whatsapp:hover { box-shadow: 0 3px 0 #124d26; }
+
+/* ---------- Header / Nav ---------- */
+
+.site-header {
+  background: var(--green-deeper);
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.brand-mark {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  color: var(--gold);
+}
+
+.brand-sub {
+  font-size: 0.72rem;
+  color: var(--white);
+  opacity: 0.8;
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  width: 34px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--white);
+}
+
+.site-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--green-deeper);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.site-nav.open {
+  display: flex;
+}
+
+.site-nav a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.98rem;
+}
+
+.site-nav a.active {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--green) 0%, var(--green-dark) 55%, var(--green-deeper) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 56px 20px 48px;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  color: var(--gold-soft);
+  font-size: 0.85rem;
+  margin: 0 0 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 8vw, 2.7rem);
+  line-height: 1.15;
+  margin: 0 0 14px;
+  color: var(--white);
+}
+
+.hero-tagline {
+  font-size: clamp(1.05rem, 4.5vw, 1.3rem);
+  color: var(--gold-soft);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.hero-sponsor {
+  font-size: 0.92rem;
+  color: var(--white);
+  opacity: 0.85;
+  margin: 0 0 28px;
+}
+
+.prize-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(212,175,55,0.5);
+  border-radius: 999px;
+  padding: 10px 22px;
+  margin-bottom: 32px;
+}
+
+.prize-icon { font-size: 1.5rem; }
+
+.prize-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.prize-amount {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+.prize-label {
+  font-size: 0.78rem;
+  color: var(--white);
+  opacity: 0.85;
+}
+
+.hero .btn-primary {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 48px 0;
+}
+
+.section-alt {
+  background: var(--white);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--green-dark);
+  margin: 0 0 16px;
+}
+
+.section-lead {
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+
+.section-body {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ---------- Video requirement card ---------- */
+
+.video-card {
+  background: var(--green-deeper);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  border-left: 5px solid var(--gold);
+}
+
+.video-card .section-title {
+  color: var(--white);
+}
+
+.video-points {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.video-points li {
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.video-note {
+  color: var(--gold-soft);
+  font-size: 0.92rem;
+  margin: 0 0 6px;
+}
+
+.whatsapp-number {
+  margin: 12px 0 0;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.whatsapp-number-large {
+  color: var(--green-dark);
+  font-size: 1.05rem;
+}
+
+/* ---------- Registration form ---------- */
+
+.reg-form {
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.93rem;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.required {
+  color: var(--red);
+}
+
+.form-group input,
+.form-group select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 13px 12px;
+  border: 1.5px solid var(--border-soft);
+  border-radius: 8px;
+  background: var(--off-white);
+  color: var(--ink);
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: 3px solid var(--gold-soft);
+  outline-offset: 1px;
+  border-color: var(--green);
+}
+
+.form-group.has-error input,
+.form-group.has-error select {
+  border-color: var(--red);
+}
+
+.error-message {
+  color: var(--red);
+  font-size: 0.83rem;
+  margin-top: 6px;
+  min-height: 1em;
+}
+
+.btn-submit {
+  margin-top: 8px;
+}
+
+.btn-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.form-status {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 12px;
+  min-height: 1.2em;
+}
+
+.form-status.status-loading {
+  color: var(--ink-soft);
+}
+
+.form-status.status-error {
+  color: var(--red);
+  font-weight: 600;
+}
+
+/* ---------- Success panel ---------- */
+
+.success-panel {
+  background: var(--green-deeper);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  text-align: center;
+  margin-top: 22px;
+  border-left: 5px solid var(--gold);
+}
+
+.success-panel h3 {
+  font-family: var(--font-display);
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  color: var(--gold-soft);
+}
+
+.success-panel p {
+  margin: 0 0 4px;
+}
+
+/* ---------- Rules ---------- */
+
+.rules-list {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.rules-list li {
+  margin-bottom: 12px;
+  color: var(--ink);
+  padding-left: 4px;
+}
+
+.rules-list li::marker {
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* ---------- Contact ---------- */
+
+#contact .btn-whatsapp {
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--green-deeper);
+  color: var(--white);
+  padding: 32px 0;
+  text-align: center;
+}
+
+.footer-title {
+  font-family: var(--font-display);
+  color: var(--gold);
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.footer-powered {
+  margin: 0 0 4px;
+  opacity: 0.85;
+}
+
+.footer-copy {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  opacity: 0.65;
+}
+
+/* ---------- Larger screens ---------- */
+
+@media (min-width: 720px) {
+  .nav-toggle { display: none; }
+
+  .site-nav {
+    display: flex !important;
+    flex-direction: row;
+    background: none;
+    border-top: none;
+  }
+
+  .site-nav a {
+    border-bottom: none;
+    padding: 8px 14px;
+  }
+
+  .hero { padding: 80px 20px 64px; }
+
+  .hero .btn-primary { max-width: 300px; }
+
+  #contact .btn-whatsapp { max-width: 320px; }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+
+</style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="container">
-      <div>BASA Entertainment Presents</div>
-      <a class="backlink" href="index.html" aria-label="Back to BASA homepage">← Back to Home</a>
-    </div>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">BASA</span>
+      <span class="brand-sub">Entertainment</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="vision.html">Vision</a>
+      <a href="biography.html">Biography</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="news.html">News</a>
+      <a href="oyo-got-spin.html" class="active" aria-current="page">OYO GOT SPIN</a>
+      <a href="books.html">Books</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
+</header>
 
-  <header>
-    <div class="container header-inner">
-      <div class="brand">
-        <small>BASA Entertainment Presents</small>
-        <h1>OYO GOT SPIN 2026</h1>
-      </div>
-      <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#register">Register</a>
-        <a href="#rules">Rules</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">BASA Entertainment Presents</p>
+    <h1 class="hero-title">🎧 OYO GOT SPIN 2026 🎧</h1>
+    <p class="hero-tagline">Oyo's Next DJ Sensation</p>
+    <p class="hero-sponsor">Proudly Sponsored by BASA</p>
+
+    <div class="prize-badge">
+      <span class="prize-icon">🏆</span>
+      <span class="prize-text">
+        <span class="prize-amount">₦1,000,000</span>
+        <span class="prize-label">Cash Prize</span>
+      </span>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="badge">Proudly Sponsored by BASA FOUNDATION</div>
-          <h2>OYO GOT SPIN 2026</h2>
-          <p class="sub">Oyo's Next DJ Sensation</p>
-          <div class="prize">₦1,000,000 CASH PRIZE</div>
-          <p>Discover, showcase, and promote talented DJs across all parts of Oyo State.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#register">REGISTER NOW</a>
-            <a class="btn btn-secondary" href="#about">Learn More</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="illustration" aria-hidden="true">
-            <div class="disc"></div>
-            <div class="needle"></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <a href="#register" class="btn btn-primary btn-large">Register Now</a>
+  </div>
+</section>
 
-    <section id="about">
-      <div class="container section-card">
-        <h3>About the Competition</h3>
-        <p>OYO GOT SPIN 2026 is a statewide DJ talent competition designed to discover, showcase and promote talented DJs across all parts of Oyo State.</p>
-        <p>The competition is open to all eligible contestants in Oyo State, and it is built to spotlight skill, creativity, performance, and originality.</p>
-      </div>
-    </section>
+<main>
 
-    <section id="register">
-      <div class="container grid-2">
-        <div class="section-card">
-          <h3>Registration Form</h3>
-          <p>Complete the form below to register. Make sure every detail is accurate before submitting.</p>
-          <div id="formStatus" class="status" role="alert" aria-live="polite"></div>
-          <form id="registrationForm" novalidate>
-            <div class="form-grid">
-              <div class="field"><label for="fullName">Full Name *</label><input id="fullName" name="fullName" type="text" required /></div>
-              <div class="field"><label for="stageName">DJ / Stage Name *</label><input id="stageName" name="stageName" type="text" required /></div>
-              <div class="field"><label for="phone">Phone Number *</label><input id="phone" name="phone" type="tel" inputmode="tel" placeholder="08012345678" required /></div>
-              <div class="field"><label for="whatsapp">WhatsApp Number *</label><input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" placeholder="08012345678" required /></div>
-              <div class="field"><label for="email">Email Address *</label><input id="email" name="email" type="email" required /></div>
-              <div class="field"><label for="pvc">PVC Number *</label><input id="pvc" name="pvc" type="text" required /></div>
-              <div class="field"><label for="lga">LGA *</label><select id="lga" name="lga" required><option value="">Select your LGA</option><option>Afijio</option><option>Akinyele</option><option>Atiba</option><option>Atisbo</option><option>Egbeda</option><option>Ibadan North</option><option>Ibadan North East</option><option>Ibadan North West</option><option>Ibadan South East</option><option>Ibadan South West</option><option>Ibarapa Central</option><option>Ibarapa East</option><option>Ibarapa North</option><option>Ido</option><option>Irepo</option><option>Iseyin</option><option>Itesiwaju</option><option>Iwajowa</option><option>Kajola</option><option>Lagelu</option><option>Ogbomosho North</option><option>Ogbomosho South</option><option>Ogo Oluwa</option><option>Olorunsogo</option><option>Oluyole</option><option>Ona Ara</option><option>Orelope</option><option>Oriire</option><option>Oyo East</option><option>Oyo West</option><option>Saki East</option><option>Saki West</option><option>Surulere</option></select></div>
-              <div class="field"><label for="experience">Years of DJ Experience *</label><select id="experience" name="experience" required><option value="">Select years</option><option>Less than 1 year</option><option>1-2 years</option><option>3-5 years</option><option>6-10 years</option><option>10+ years</option></select></div>
-              <div class="field full"><label for="social">Social Media Handle *</label><input id="social" name="social" type="text" placeholder="@yourhandle" required /></div>
-            </div>
-            <button id="submitBtn" class="btn btn-primary full" type="submit"><span class="btnText">Submit Registration</span><span class="spinner" aria-hidden="true"></span></button>
-          </form>
-        </div>
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About the Competition</h2>
+      <p class="section-lead">
+        OYO GOT SPIN 2026 is a statewide DJ talent hunt created to discover, promote
+        and celebrate talented DJs across Oyo State.
+      </p>
+      <p class="section-body">
+        Contestants from all 33 Local Government Areas of Oyo State are welcome to
+        take part. Whether you play at street parties, weddings, clubs or from your
+        bedroom setup, OYO GOT SPIN gives you a fair, structured platform to show
+        what you can do and be recognised for it. Register below, then send your
+        audition video on WhatsApp to enter the running.
+      </p>
+    </div>
+  </section>
 
-        <div class="section-card">
-          <h3>Audition Video Instructions</h3>
-          <p><strong>Record a DJ performance video of NOT MORE THAN 2 MINUTES.</strong></p>
-          <p>After completing your registration, send your audition video through WhatsApp.</p>
-          <p><strong>WhatsApp number:</strong> 08148035104</p>
-          <a class="btn btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/2348148035104?text=Hello%2C%20I%20am%20interested%20in%20OYO%20GOT%20SPIN%202026.%20I%20have%20completed%20my%20registration%20and%20I%20am%20sending%20my%20audition%20video.">SEND YOUR AUDITION VIDEO ON WHATSAPP</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="rules">
-      <div class="container section-card">
-        <h3>Competition Rules</h3>
-        <ul class="rules">
-          <li>1. The competition is open to eligible DJs across Oyo State.</li>
-          <li>2. Contestants must provide accurate registration information.</li>
-          <li>3. A valid PVC Number is required.</li>
-          <li>4. Contestants must submit an original DJ performance video.</li>
-          <li>5. The audition video must NOT exceed 2 minutes.</li>
-          <li>6. Audition videos must be sent through WhatsApp.</li>
-          <li>7. Contestants must follow all official competition rules.</li>
-          <li>8. Organizers reserve the right to disqualify contestants who violate the rules.</li>
+  <!-- ============ VIDEO REQUIREMENT ============ -->
+  <section class="section section-alt" id="video-requirement">
+    <div class="container">
+      <div class="video-card">
+        <h2 class="section-title">🎥 Audition Video Requirement</h2>
+        <ul class="video-points">
+          <li>Record a DJ performance video of <strong>not more than 2 minutes</strong>.</li>
+          <li>Complete the registration form below first.</li>
+          <li>After registering, send your audition video through WhatsApp — not through this website.</li>
         </ul>
+        <p class="video-note">
+          We do not accept video uploads on this site. All audition videos are submitted
+          directly to our WhatsApp line so we can review them quickly.
+        </p>
+        <a
+          class="btn btn-whatsapp btn-large"
+          id="whatsappVideoBtn"
+          href="https://wa.me/2348148035104?text=Hello%2C%20I%20am%20interested%20in%20OYO%20GOT%20SPIN%202026.%20I%20have%20completed%20my%20registration%20and%20I%20am%20sending%20my%20audition%20video."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📲 Send Your Audition Video on WhatsApp
+        </a>
+        <p class="whatsapp-number">WhatsApp: 0814 803 5104</p>
       </div>
-    </section>
-
-    <section id="faq">
-      <div class="container section-card">
-        <h3>FAQ</h3>
-        <div class="faq">
-          <details><summary>Who can participate?</summary><p>Eligible DJs across all parts of Oyo State can participate.</p></details>
-          <details><summary>Is the competition only for Oyo South?</summary><p>No. OYO GOT SPIN 2026 covers ALL OYO STATE, not Oyo South only.</p></details>
-          <details><summary>How long should my audition video be?</summary><p>Your audition video must not exceed 2 minutes.</p></details>
-          <details><summary>Where do I send my audition video?</summary><p>Send it through WhatsApp to 08148035104 using the official button on this page.</p></details>
-          <details><summary>What is the grand prize?</summary><p>The grand prize is ₦1,000,000 cash prize.</p></details>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <strong>OYO GOT SPIN 2026</strong>
-      BASA ENTERTAINMENT<br />Proudly Sponsored by BASA FOUNDATION<br />© 2026 All Rights Reserved.
     </div>
-  </footer>
+  </section>
 
-  <script>
-    /* ============================================================================
-       HOW REGISTRATIONS REACH YOUR GOOGLE SHEET
-       ============================================================================
-       This page submits data directly to the OYO GOT SPIN 2026 Google Form
-       (via GOOGLE_FORM_ID and GOOGLE_FORM_ENTRY_IDS below). That Form is
-       already linked to the OYO GOT SPIN Google Sheet, so every submission
-       automatically appears as a new row in its "Form Responses 1" tab.
-       No Apps Script or deployment is needed.
+  <!-- ============ REGISTRATION ============ -->
+  <section class="section" id="register">
+    <div class="container">
+      <h2 class="section-title">Contestant Registration</h2>
+      <p class="section-lead">
+        Fill in your details accurately. Fields marked with an asterisk (*) are required.
+      </p>
 
-       HOW TO UPDATE THESE VALUES (only if you ever recreate the Google Form):
-       1. Open the Google Form → three dots (⋮) → "Get pre-filled link".
-       2. Type a test answer into every question, then tap "Get link" and
-          copy it.
-       3. The link looks like:
-          https://docs.google.com/forms/d/e/FORM_ID/viewform?usp=pp_url
-            &entry.111111111=TEST&entry.222222222=TEST&...
-       4. FORM_ID is the code between /d/e/ and /viewform — update
-          GOOGLE_FORM_ID below.
-       5. Match each entry.XXXXXXXXX= number to the correct field in
-          GOOGLE_FORM_ENTRY_IDS below, in the order the questions appear on
-          the form.
-       ============================================================================ */
-    var GOOGLE_FORM_ID = "1FAIpQLSdUzUQF6LCtNCNk0sWkoo7phtSn3oAKEKKfglxs551byjBykg";
+      <form id="registrationForm" class="reg-form" novalidate>
 
-    var GOOGLE_FORM_ENTRY_IDS = {
-      fullName:   "entry.1506902284",
-      stageName:  "entry.1453211177",
-      phone:      "entry.578744723",
-      whatsapp:   "entry.297025692",
-      email:      "entry.929586881",
-      pvc:        "entry.423342017",
-      lga:        "entry.931047267",
-      experience: "entry.483673688",
-      social:     "entry.867856020"
-    };
+        <div class="form-group">
+          <label for="fullName">Full Name <span class="required">*</span></label>
+          <input type="text" id="fullName" name="fullName" required autocomplete="name">
+          <span class="error-message" id="err-fullName"></span>
+        </div>
 
-    const form = document.getElementById('registrationForm');
-    const statusBox = document.getElementById('formStatus');
-    const submitBtn = document.getElementById('submitBtn');
-    const spinner = submitBtn.querySelector('.spinner');
-    const btnText = submitBtn.querySelector('.btnText');
-    let isSubmitting = false;
+        <div class="form-group">
+          <label for="djName">DJ / Stage Name <span class="required">*</span></label>
+          <input type="text" id="djName" name="djName" required>
+          <span class="error-message" id="err-djName"></span>
+        </div>
 
-    const showStatus = (msg, type='error') => {
-      statusBox.textContent = msg;
-      statusBox.className = `status show ${type}`;
-    };
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" required inputmode="tel" placeholder="080XXXXXXXX" autocomplete="tel">
+          <span class="error-message" id="err-phone"></span>
+        </div>
 
-    // Fixed: original patterns were missing backslashes and were invalid
-    // JavaScript regex syntax, which would have broken form submission
-    // entirely (an uncaught SyntaxError) the moment someone tried to submit.
-    const validPhone = v => /^\+?\d{10,15}$/.test(v.replace(/\s+/g,''));
-    const validEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
-    const validPVC = v => /^[A-Za-z0-9\-/]{5,}$/.test(v.trim());
+        <div class="form-group">
+          <label for="whatsapp">WhatsApp Number <span class="required">*</span></label>
+          <input type="tel" id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="080XXXXXXXX">
+          <span class="error-message" id="err-whatsapp"></span>
+        </div>
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (isSubmitting) return;
-      const data = Object.fromEntries(new FormData(form).entries());
-      const required = ['fullName','stageName','phone','whatsapp','email','pvc','lga','experience','social'];
-      for (const key of required) if (!data[key] || !String(data[key]).trim()) return showStatus('Please fill in all required fields.', 'error');
-      if (!validEmail(data.email)) return showStatus('Please enter a valid email address.', 'error');
-      if (!validPhone(data.phone)) return showStatus('Please enter a valid phone number.', 'error');
-      if (!validPhone(data.whatsapp)) return showStatus('Please enter a valid WhatsApp number.', 'error');
-      if (!validPVC(data.pvc)) return showStatus('Please enter a valid PVC Number.', 'error');
-      if (!data.lga) return showStatus('Please select your LGA.', 'error');
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+          <span class="error-message" id="err-email"></span>
+        </div>
 
-      isSubmitting = true;
-      submitBtn.disabled = true;
-      spinner.style.display = 'inline-block';
-      btnText.textContent = 'Submitting...';
-      showStatus('Submitting your registration...', 'success');
+        <div class="form-group">
+          <label for="pvc">PVC Number <span class="required">*</span></label>
+          <input type="text" id="pvc" name="pvc" required>
+          <span class="error-message" id="err-pvc"></span>
+        </div>
 
-      try {
-        await submitToGoogleForm(data);
-        form.reset();
-        showStatus('Registration Successful! Please send your audition video through WhatsApp using the button below.', 'success');
-      } catch (err) {
-        console.error('OYO GOT SPIN 2026 — registration failed:', err);
-        showStatus('We could not save your registration. Please check your internet connection and try again.', 'error');
-      } finally {
-        isSubmitting = false;
-        submitBtn.disabled = false;
-        spinner.style.display = 'none';
-        btnText.textContent = 'Submit Registration';
-      }
-    });
+        <div class="form-group">
+          <label for="lga">Local Government Area <span class="required">*</span></label>
+          <select id="lga" name="lga" required>
+            <option value="" disabled selected>Select your LGA</option>
+            <option value="Afijio">Afijio</option>
+            <option value="Akinyele">Akinyele</option>
+            <option value="Atiba">Atiba</option>
+            <option value="Atisbo">Atisbo</option>
+            <option value="Egbeda">Egbeda</option>
+            <option value="Ibadan North">Ibadan North</option>
+            <option value="Ibadan North East">Ibadan North East</option>
+            <option value="Ibadan North West">Ibadan North West</option>
+            <option value="Ibadan South East">Ibadan South East</option>
+            <option value="Ibadan South West">Ibadan South West</option>
+            <option value="Ibarapa Central">Ibarapa Central</option>
+            <option value="Ibarapa East">Ibarapa East</option>
+            <option value="Ibarapa North">Ibarapa North</option>
+            <option value="Ido">Ido</option>
+            <option value="Irepo">Irepo</option>
+            <option value="Iseyin">Iseyin</option>
+            <option value="Itesiwaju">Itesiwaju</option>
+            <option value="Iwajowa">Iwajowa</option>
+            <option value="Kajola">Kajola</option>
+            <option value="Lagelu">Lagelu</option>
+            <option value="Ogbomosho North">Ogbomosho North</option>
+            <option value="Ogbomosho South">Ogbomosho South</option>
+            <option value="Ogo Oluwa">Ogo Oluwa</option>
+            <option value="Olorunsogo">Olorunsogo</option>
+            <option value="Oluyole">Oluyole</option>
+            <option value="Ona Ara">Ona Ara</option>
+            <option value="Orelope">Orelope</option>
+            <option value="Oriire">Oriire</option>
+            <option value="Oyo East">Oyo East</option>
+            <option value="Oyo West">Oyo West</option>
+            <option value="Saki East">Saki East</option>
+            <option value="Saki West">Saki West</option>
+            <option value="Surulere">Surulere</option>
+          </select>
+          <span class="error-message" id="err-lga"></span>
+        </div>
 
-    /**
-     * submitToGoogleForm(data)
-     * ----------------------------------------------------------------------
-     * Sends the registration data to the linked Google Form, which Google
-     * automatically records as a new row in the connected Google Sheet.
-     *
-     * Google Forms' submission endpoint does not allow this page to read
-     * back a real success/failure response (a normal browser security
-     * restriction called CORS, not a bug in this code). So this function
-     * sends the data in "no-cors" mode and resolves as successful once the
-     * request completes without a network error.
-     */
-    function submitToGoogleForm(data) {
-      const formActionUrl =
-        'https://docs.google.com/forms/d/e/' + GOOGLE_FORM_ID + '/formResponse';
+        <div class="form-group">
+          <label for="experience">Years of DJ Experience <span class="required">*</span></label>
+          <input type="number" id="experience" name="experience" min="0" max="60" required inputmode="numeric">
+          <span class="error-message" id="err-experience"></span>
+        </div>
 
-      const body = new URLSearchParams();
-      Object.keys(GOOGLE_FORM_ENTRY_IDS).forEach((fieldName) => {
-        const entryId = GOOGLE_FORM_ENTRY_IDS[fieldName];
-        const value = data[fieldName] !== undefined && data[fieldName] !== null
-          ? String(data[fieldName])
-          : '';
-        body.append(entryId, value);
-      });
+        <div class="form-group">
+          <label for="social">Social Media Handle</label>
+          <input type="text" id="social" name="social" placeholder="@yourdjhandle">
+          <span class="error-message" id="err-social"></span>
+        </div>
 
-      return fetch(formActionUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString()
-      });
-    }
-  </script>
-</body>
-  </html>
+        <button type="submit" class="btn btn-primary btn-large btn-submit" id="submitBtn">
+          Submit Registration
+        </button>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <!-- Success state (hidden by default) -->
+      <div class="success-panel" id="successPanel" hidden>
+        <h3>✅ Registration Successful</h3>
+        <p>Thank you for registering for OYO GOT SPIN 2026.</p>
+        <p>Your registration details have been received.</p>
+        <p>Please send your audition video of not more than 2 minutes through WhatsApp.</p>
+        <a
+          class="btn btn-whatsapp btn-large"
+          href="https://wa.me/2348148035104?text=Hello%2C%20I%20am%20interested%20in%20OYO%20GOT%20SPIN%202026.%20I%20have%20completed%20my%20registration%20and%20I%20am%20sending%20my%20audition%20video."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📲 Send Your Audition Video on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RULES ============ -->
+  <section class="section section-alt" id="rules">
+    <div class="container">
+      <h2 class="section-title">Competition Rules</h2>
+      <ol class="rules-list">
+        <li>OYO GOT SPIN 2026 is open to eligible DJs across Oyo State.</li>
+        <li>Participants must provide accurate registration information.</li>
+        <li>Participants must provide a valid PVC Number.</li>
+        <li>Each participant must submit an original DJ performance video.</li>
+        <li>The audition video must not exceed 2 minutes.</li>
+        <li>Audition videos must be submitted through WhatsApp.</li>
+        <li>Participants must follow all official competition rules.</li>
+        <li>The organizers reserve the right to disqualify entries that violate the rules.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Registration &amp; Audition Enquiries</h2>
+      <p class="section-lead">
+        Have a question about registration or your
